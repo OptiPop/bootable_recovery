@@ -27,6 +27,9 @@ LOCAL_STATIC_LIBRARIES += \
     libext4_utils_static \
     libsparse_static \
     libz
+
+LOCAL_C_INCLUDES += external/e2fsprogs/lib
+LOCAL_STATIC_LIBRARIES += libext2_blkid libext2_uuid_static
 endif
 
 LOCAL_STATIC_LIBRARIES += $(TARGET_RECOVERY_UPDATER_LIBS) $(TARGET_RECOVERY_UPDATER_EXTRA_LIBS)

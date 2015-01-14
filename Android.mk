@@ -71,11 +71,13 @@ LOCAL_STATIC_LIBRARIES := \
     libselinux \
     libstdc++ \
     libm \
-    libc
+    libc \
+    libext2_blkid \
+    libext2_uuid_static
 
 ifeq ($(TARGET_USERIMAGES_USE_EXT4), true)
     LOCAL_CFLAGS += -DUSE_EXT4
-    LOCAL_C_INCLUDES += system/extras/ext4_utils system/vold
+    LOCAL_C_INCLUDES += system/extras/ext4_utils system/vold external/e2fsprogs/lib
     LOCAL_STATIC_LIBRARIES += libext4_utils_static libz
 endif
 
